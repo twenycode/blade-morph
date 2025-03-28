@@ -20,13 +20,15 @@ A comprehensive set of Laravel Blade components to accelerate your UI developmen
 
 ## 📦 Installation
 
-### 1. Install Laravel UI
+### 1. Install Laravel BladeKit
 
-Since Laravel BladeKit is built on top of Bootstrap 5, you first need to install Laravel UI:
+Install the package via composer:
 
 ```bash
-composer require laravel/ui
+composer require twenycode/laravel-bladekit
 ```
+
+This will automatically install Laravel UI as a dependency and register the service provider.
 
 ### 2. Install Bootstrap 5 via Laravel UI
 
@@ -40,16 +42,6 @@ This command will install Bootstrap 5 assets. You'll then need to compile these 
 npm install
 npm run dev
 ```
-
-### 3. Install Laravel BladeKit
-
-Now you can install the package via composer:
-
-```bash
-composer require twenycode/laravel-bladekit
-```
-
-The package will automatically register its service provider.
 
 ## ⚙️ Configuration
 
@@ -437,13 +429,13 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 ```json
 "repositories": [
-    {
-        "type": "path",
-        "url": "../path/to/laravel-bladekit"
-    }
+{
+"type": "path",
+"url": "../path/to/laravel-bladekit"
+}
 ],
 "require": {
-    "twenycode/laravel-bladekit": "*"
+"twenycode/laravel-bladekit": "*"
 }
 ```
 
