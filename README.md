@@ -4,21 +4,46 @@
 [![Total Downloads](https://img.shields.io/packagist/dt/twenycode/laravel-bladekit.svg?style=flat-square)](https://packagist.org/packages/twenycode/laravel-bladekit)
 [![License](https://img.shields.io/packagist/l/twenycode/laravel-bladekit.svg?style=flat-square)](https://packagist.org/packages/twenycode/laravel-bladekit)
 
-A comprehensive set of Laravel Blade components to accelerate your UI development. Built on top of Bootstrap 5, Laravel BladeKit provides reusable, customizable components for common UI elements.
+A comprehensive set of Laravel Blade components to accelerate your UI development. Built on Bootstrap 5, Laravel BladeKit provides 60+ reusable, customizable components for common UI elements to streamline your development workflow. Eliminate repetitive UI code and create consistent, beautiful interfaces with minimal effort.
 
-## Features
+![Laravel BladeKit Preview](https://via.placeholder.com/1200x600?text=Laravel+BladeKit)
 
-- **60+ Ready-to-use Components** - Everything from forms to navigation to tables
-- **Bootstrap 5 Integration** - Modern, responsive design out of the box
-- **Fully Customizable** - Extend or override any component
-- **Laravel Integration** - Works seamlessly with Laravel's Blade templating
-- **Form Validation** - Built-in error handling and validation state display
-- **Interactive Components** - Dropdowns, tabs, accordions, modals, and more
+## 🚀 Features
+
+- **60+ Ready-to-use Components** - Everything from buttons to complex data tables
 - **Consistent API** - Intuitive naming and parameters across all components
+- **Bootstrap 5 Integration** - Modern, responsive design out of the box
+- **Form Validation** - Built-in error handling and validation state display
+- **Minimal Configuration** - Works seamlessly with Laravel's Blade templating
+- **Fully Customizable** - Extend or override any component as needed
+- **Interactive Components** - Dropdowns, tabs, accordions, modals, and more
 
-## Installation
+## 📦 Installation
 
-You can install the package via composer:
+### 1. Install Laravel UI
+
+Since Laravel BladeKit is built on top of Bootstrap 5, you first need to install Laravel UI:
+
+```bash
+composer require laravel/ui
+```
+
+### 2. Install Bootstrap 5 via Laravel UI
+
+```bash
+php artisan ui bootstrap
+```
+
+This command will install Bootstrap 5 assets. You'll then need to compile these assets:
+
+```bash
+npm install
+npm run dev
+```
+
+### 3. Install Laravel BladeKit
+
+Now you can install the package via composer:
 
 ```bash
 composer require twenycode/laravel-bladekit
@@ -26,19 +51,37 @@ composer require twenycode/laravel-bladekit
 
 The package will automatically register its service provider.
 
-## Publishing Resources (Optional)
+## ⚙️ Configuration
+
+### Bootstrap Setup
+
+Ensure you have Bootstrap 5 properly set up in your Laravel application. Make sure your main layout file includes the Bootstrap CSS and JS:
+
+```html
+<!-- In your layout file (e.g., app.blade.php) -->
+<link href="{{ asset('css/app.css') }}" rel="stylesheet">
+<script src="{{ asset('js/app.js') }}" defer></script>
+```
+
+For Font Awesome icons (used in many examples), you'll need to include Font Awesome in your project:
+
+```html
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+```
+
+### BladeKit Configuration (Optional)
 
 ```bash
 # Publish configuration
-php artisan vendor:publish --provider="TwenyCode\LaravelBladeKit\TwenyLaravelBladeKitServiceProvider" --tag="tweny-bladekit-config"
+php artisan vendor:publish --tag="tweny-bladekit-config"
 
 # Publish views for customization
-php artisan vendor:publish --provider="TwenyCode\LaravelBladeKit\TwenyLaravelBladeKitServiceProvider" --tag="tweny-bladekit-views"
+php artisan vendor:publish --tag="tweny-bladekit-views"
 ```
 
-## Quick Start
+## 🎯 Quick Start
 
-Once installed, you can start using Laravel BladeKit components in your Blade views:
+Once installed, you can immediately start using Laravel BladeKit components in your Blade views:
 
 ```blade
 <x-card card-title="Registration Form">
@@ -64,17 +107,18 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 </x-card>
 ```
 
-## Available Components
+## 📚 Component Categories
 
-### Buttons
+Laravel BladeKit includes components organized into the following categories:
 
+### Button Components
 - `x-button` - Standard button with various styles and states
 - `x-button-group` - Group of related buttons
 - `x-delete` - Delete button with confirmation dialog
+- `x-dropleft` - Dropdown button with left alignment
 
 ### Layout Components
-
-- `x-card` - Card container with optional header, title, and buttons
+- `x-card` - Card container with optional header and footer
 - `x-alert` - Alert box for messages and notifications
 - `x-modal` - Modal dialog with customizable header and footer
 - `x-toast` - Toast notification for temporary messages
@@ -85,14 +129,12 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 - `x-progress` - Progress bar with various styles and states
 
 ### Form Components
-
 - `x-form` - Form container with CSRF protection and method spoofing
 - `x-form-group` - Form group with label and error handling
 - `x-error` - Form field error message
 - `x-ajax-error` - AJAX-specific error message
 
 ### Form Elements
-
 - `x-label` - Form label with optional required indicator
 - `x-input` - Text input field with validation support
 - `x-password` - Password input field
@@ -106,8 +148,7 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 - `x-pick-date` - Date picker
 - `x-toggle-switch` - Toggle switch input
 
-### Navigation
-
+### Navigation Components
 - `x-nav-link` - Navigation link with active state detection
 - `x-nav-modal` - Navigation link that opens a modal
 - `x-dropdown` - Dropdown menu
@@ -115,15 +156,14 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 - `x-breadcrumb` - Breadcrumb navigation
 - `x-pagination` - Pagination controls
 
-### Tables
-
+### Table Components
 - `x-table` - Responsive table with sorting and searching
 - `x-table-head` - Table header cell with sorting support
 - `x-table-body` - Table body container
 - `x-table-row` - Table row with optional linking
 - `x-table-cell` - Table cell with alignment options
 
-## Component Examples
+## 🔍 Component Examples
 
 ### Button Components
 
@@ -188,22 +228,6 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
         />
     </x-form-group>
     
-    <x-form-group name="permissions" label="Permissions">
-        <x-multi-select 
-            name="permissions" 
-            :options="['create' => 'Create', 'read' => 'Read', 'update' => 'Update', 'delete' => 'Delete']" 
-        />
-    </x-form-group>
-    
-    <x-form-group name="profile_picture" label="Profile Picture">
-        <x-file-upload 
-            name="profile_picture" 
-            accept="image/*" 
-            :max-size="2048" 
-            preview="true" 
-        />
-    </x-form-group>
-    
     <x-form-group name="active" label="Status">
         <x-toggle-switch name="active" label-on="Active" label-off="Inactive" checked />
     </x-form-group>
@@ -218,12 +242,12 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 ### Layout Components
 
 ```blade
-<!-- Card -->
+<!-- Card with title and action buttons -->
 <x-card card-title="User Profile" card-buttons='<x-button label="Edit" color="primary" size="sm" />'>
     <p>Card content goes here...</p>
 </x-card>
 
-<!-- Modal -->
+<!-- Modal dialog -->
 <x-button label="Open Modal" data-bs-toggle="modal" data-bs-target="#exampleModal" />
 
 <x-modal id="exampleModal" modal-title="Example Modal">
@@ -235,7 +259,7 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
     </x-slot>
 </x-modal>
 
-<!-- Accordion -->
+<!-- Accordion with multiple items -->
 <x-accordion id="accordionExample">
     <x-accordion-item accordion-id="accordionExample" title="Item 1" open>
         <p>First accordion content...</p>
@@ -253,14 +277,14 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 ### Navigation Components
 
 ```blade
-<!-- Breadcrumb -->
+<!-- Breadcrumb navigation -->
 <x-breadcrumb :items="[
     ['url' => route('dashboard'), 'label' => 'Dashboard'],
     ['url' => route('users.index'), 'label' => 'Users'],
     'Create User'
 ]" />
 
-<!-- Tabs -->
+<!-- Tabbed interface -->
 <x-tab :tabs="[
     'personal' => ['label' => 'Personal Info', 'icon' => 'fas fa-user'],
     'account' => ['label' => 'Account', 'icon' => 'fas fa-key'],
@@ -279,7 +303,7 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
     </x-tab-content>
 </x-tab>
 
-<!-- Dropdown -->
+<!-- Dropdown menu -->
 <x-dropdown label="Actions" icon="fas fa-cog" color="primary">
     <x-dropdown-item href="{{ route('users.show', $user) }}">View</x-dropdown-item>
     <x-dropdown-item href="{{ route('users.edit', $user) }}">Edit</x-dropdown-item>
@@ -307,22 +331,39 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
                 <x-table-cell>{{ $user->email }}</x-table-cell>
                 <x-table-cell align="center">
                     <x-button-group size="sm">
-                        <x-button type="button" icon="fas fa-eye" color="primary" size="sm" />
-                        <x-button type="button" icon="fas fa-edit" color="warning" size="sm" />
+                        <x-button icon="fas fa-eye" color="primary" size="sm" />
+                        <x-button icon="fas fa-edit" color="warning" size="sm" />
                         <x-delete action="{{ route('users.destroy', $user) }}" icon="fas fa-trash" color="danger" size="sm" />
                     </x-button-group>
                 </x-table-cell>
             </x-table-row>
         @endforeach
     </x-table-body>
-    
-    <div class="mt-3">
-        <x-pagination :collection="$users" align="end" with-text />
-    </div>
 </x-table>
+
+<!-- Pagination -->
+<x-pagination :collection="$users" align="end" with-text />
 ```
 
-## Customization
+## 🔄 AJAX Form Support
+
+BladeKit provides built-in AJAX form handling. For this to work correctly, ensure you have included jQuery in your application:
+
+```html
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+```
+
+Then you can use the AJAX form component:
+
+```blade
+<x-form action="{{ route('contact.submit') }}" ajax="true" id="contactForm">
+    <!-- Form fields -->
+    
+    <!-- Success and error messages will be automatically handled -->
+</x-form>
+```
+
+## 🛠️ Customization
 
 ### Extending Components
 
@@ -358,11 +399,7 @@ public function boot()
 }
 ```
 
-### Overriding Views
-
-After publishing the views, you can modify them in your `resources/views/vendor/tweny-bladekit` directory.
-
-## Configuration
+### Configuration Customization
 
 You can customize the default styles and component registration in the `config/tweny-bladekit.php` file:
 
@@ -378,17 +415,43 @@ You can customize the default styles and component registration in the `config/t
 ],
 ```
 
-## Requirements
+## 📋 Requirements
 
 - PHP 8.0+
 - Laravel 8.0+
 - Bootstrap 5 (for default styling)
+- Laravel UI package
+- jQuery (for AJAX form functionality)
+- Font Awesome (for icons used in components)
 
-## Credits
+## 🤝 Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
+
+### Development Setup
+
+1. Clone the repository
+2. Install dependencies: `composer install`
+3. Set up a Laravel application for testing
+4. Install the package in your test application via composer local path
+
+```json
+"repositories": [
+    {
+        "type": "path",
+        "url": "../path/to/laravel-bladekit"
+    }
+],
+"require": {
+    "twenycode/laravel-bladekit": "*"
+}
+```
+
+## 📄 License
+
+The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
+
+## 👥 Credits
 
 - [TWENY LIMITED](https://tweny.co.tz)
 - [All Contributors](../../contributors)
-
-## License
-
-The MIT License (MIT). Please see [License File](LICENSE.md) for more information.
