@@ -5,7 +5,7 @@ namespace TwenyCode\TwenyUiKit;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
-final class TwenyUiKitServiceProvider extends ServiceProvider
+final class TwenyLaravelBladeKitServiceProvider extends ServiceProvider
 {
     //  Register services.
     public function register()
