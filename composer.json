@@ -1,15 +1,15 @@
 {
-    "name": "twenycode/tweny-ui-kit",
+    "name": "twenycode/laravel-bladekit",
     "license": "MIT",
     "autoload": {
         "psr-4": {
-            "TwenyCode\\TwenyUiKit\\": "src/"
+            "TwenyCode\\LaravelBladeKit\\": "src/"
         }
     },
     "authors": [
         {
-            "name": "Antweny Sawe",
-            "email": "antweny@live.com"
+            "name": "TWENY LIMITED",
+            "email": "twenycode@tweny.co.tz"
         }
     ],
     "minimum-stability": "dev",
