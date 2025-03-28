@@ -8,7 +8,7 @@ A comprehensive set of Laravel Blade components to accelerate your UI developmen
 
 ## Features
 
-- **60+ Ready-to-use Components** - Everything from forms to navigation to cards
+- **60+ Ready-to-use Components** - Everything from forms to navigation to tables
 - **Bootstrap 5 Integration** - Modern, responsive design out of the box
 - **Fully Customizable** - Extend or override any component
 - **Laravel Integration** - Works seamlessly with Laravel's Blade templating
@@ -68,48 +68,48 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 
 ### Buttons
 
-- `x-button` - Standard button with various styles
-- `x-delete` - Delete button with confirmation
+- `x-button` - Standard button with various styles and states
 - `x-button-group` - Group of related buttons
+- `x-delete` - Delete button with confirmation dialog
 
 ### Layout Components
 
-- `x-card` - Card container with optional header
-- `x-alert` - Alert box for messages
-- `x-modal` - Modal dialog
-- `x-toast` - Toast notification
-- `x-accordion` - Collapsible content
-- `x-accordion-item` - Individual accordion item
-- `x-tab` - Tabbed interface
-- `x-tab-content` - Tab content panel
-- `x-progress` - Progress bar
+- `x-card` - Card container with optional header, title, and buttons
+- `x-alert` - Alert box for messages and notifications
+- `x-modal` - Modal dialog with customizable header and footer
+- `x-toast` - Toast notification for temporary messages
+- `x-accordion` - Collapsible accordion container
+- `x-accordion-item` - Individual accordion panel
+- `x-tab` - Tabbed interface container
+- `x-tab-content` - Individual tab panel content
+- `x-progress` - Progress bar with various styles and states
 
 ### Form Components
 
-- `x-form` - Form container with CSRF protection
+- `x-form` - Form container with CSRF protection and method spoofing
 - `x-form-group` - Form group with label and error handling
 - `x-error` - Form field error message
 - `x-ajax-error` - AJAX-specific error message
 
 ### Form Elements
 
-- `x-label` - Form label
-- `x-input` - Text input field
+- `x-label` - Form label with optional required indicator
+- `x-input` - Text input field with validation support
 - `x-password` - Password input field
 - `x-email` - Email input field
 - `x-textarea` - Multi-line text area
 - `x-checkbox` - Checkbox input
 - `x-radio` - Radio button input
-- `x-select` - Dropdown select
+- `x-select` - Dropdown select with option group support
 - `x-multi-select` - Multi-select dropdown
-- `x-file-upload` - File upload with preview
+- `x-file-upload` - File upload with preview support
 - `x-pick-date` - Date picker
 - `x-toggle-switch` - Toggle switch input
 
 ### Navigation
 
-- `x-nav-link` - Navigation link
-- `x-nav-modal` - Link that opens a modal
+- `x-nav-link` - Navigation link with active state detection
+- `x-nav-modal` - Navigation link that opens a modal
 - `x-dropdown` - Dropdown menu
 - `x-dropdown-item` - Dropdown menu item
 - `x-breadcrumb` - Breadcrumb navigation
@@ -117,14 +117,15 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 
 ### Tables
 
-- `x-table` - Responsive table with features
-- `x-table-head` - Table header cell
-- `x-table-row` - Table row
-- `x-table-cell` - Table data cell
+- `x-table` - Responsive table with sorting and searching
+- `x-table-head` - Table header cell with sorting support
+- `x-table-body` - Table body container
+- `x-table-row` - Table row with optional linking
+- `x-table-cell` - Table cell with alignment options
 
 ## Component Examples
 
-### Button Component
+### Button Components
 
 ```blade
 <!-- Basic button -->
@@ -143,6 +144,13 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
     loading="true" 
     loading-text="Please wait..." 
 />
+
+<!-- Button group -->
+<x-button-group>
+    <x-button label="Left" />
+    <x-button label="Middle" />
+    <x-button label="Right" />
+</x-button-group>
 
 <!-- Delete button with confirmation -->
 <x-delete 
@@ -180,6 +188,22 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
         />
     </x-form-group>
     
+    <x-form-group name="permissions" label="Permissions">
+        <x-multi-select 
+            name="permissions" 
+            :options="['create' => 'Create', 'read' => 'Read', 'update' => 'Update', 'delete' => 'Delete']" 
+        />
+    </x-form-group>
+    
+    <x-form-group name="profile_picture" label="Profile Picture">
+        <x-file-upload 
+            name="profile_picture" 
+            accept="image/*" 
+            :max-size="2048" 
+            preview="true" 
+        />
+    </x-form-group>
+    
     <x-form-group name="active" label="Status">
         <x-toggle-switch name="active" label-on="Active" label-off="Inactive" checked />
     </x-form-group>
@@ -191,32 +215,77 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
 </x-form>
 ```
 
-### Navigation and Tabs
+### Layout Components
 
 ```blade
+<!-- Card -->
+<x-card card-title="User Profile" card-buttons='<x-button label="Edit" color="primary" size="sm" />'>
+    <p>Card content goes here...</p>
+</x-card>
+
+<!-- Modal -->
+<x-button label="Open Modal" data-bs-toggle="modal" data-bs-target="#exampleModal" />
+
+<x-modal id="exampleModal" modal-title="Example Modal">
+    <p>Modal content goes here...</p>
+    
+    <x-slot name="modalFooter">
+        <x-button type="button" color="secondary" data-bs-dismiss="modal">Close</x-button>
+        <x-button type="button" color="primary">Save changes</x-button>
+    </x-slot>
+</x-modal>
+
+<!-- Accordion -->
+<x-accordion id="accordionExample">
+    <x-accordion-item accordion-id="accordionExample" title="Item 1" open>
+        <p>First accordion content...</p>
+    </x-accordion-item>
+    
+    <x-accordion-item accordion-id="accordionExample" title="Item 2">
+        <p>Second accordion content...</p>
+    </x-accordion-item>
+</x-accordion>
+
+<!-- Progress Bar -->
+<x-progress value="75" color="success" show-label />
+```
+
+### Navigation Components
+
+```blade
+<!-- Breadcrumb -->
 <x-breadcrumb :items="[
     ['url' => route('dashboard'), 'label' => 'Dashboard'],
     ['url' => route('users.index'), 'label' => 'Users'],
     'Create User'
 ]" />
 
+<!-- Tabs -->
 <x-tab :tabs="[
     'personal' => ['label' => 'Personal Info', 'icon' => 'fas fa-user'],
     'account' => ['label' => 'Account', 'icon' => 'fas fa-key'],
     'preferences' => ['label' => 'Preferences', 'icon' => 'fas fa-cog']
 ]">
     <x-tab-content tab-id="{{ $tabs->id }}" id="personal" active="true">
-        <!-- Personal info content -->
+        <p>Personal information content...</p>
     </x-tab-content>
     
     <x-tab-content tab-id="{{ $tabs->id }}" id="account">
-        <!-- Account content -->
+        <p>Account information content...</p>
     </x-tab-content>
     
     <x-tab-content tab-id="{{ $tabs->id }}" id="preferences">
-        <!-- Preferences content -->
+        <p>Preferences content...</p>
     </x-tab-content>
 </x-tab>
+
+<!-- Dropdown -->
+<x-dropdown label="Actions" icon="fas fa-cog" color="primary">
+    <x-dropdown-item href="{{ route('users.show', $user) }}">View</x-dropdown-item>
+    <x-dropdown-item href="{{ route('users.edit', $user) }}">Edit</x-dropdown-item>
+    <x-dropdown-item divider />
+    <x-dropdown-item href="#" icon="fas fa-trash" class="text-danger">Delete</x-dropdown-item>
+</x-dropdown>
 ```
 
 ### Table Component
@@ -230,18 +299,26 @@ Once installed, you can start using Laravel BladeKit components in your Blade vi
         <x-table-head sortable="false" align="center">Actions</x-table-head>
     </x-slot>
     
-    @foreach($users as $user)
-        <x-table-row>
-            <x-table-cell>{{ $user->id }}</x-table-cell>
-            <x-table-cell>{{ $user->name }}</x-table-cell>
-            <x-table-cell>{{ $user->email }}</x-table-cell>
-            <x-table-cell align="center">
-                <x-button type="button" icon="fas fa-eye" color="primary" size="sm" />
-                <x-button type="button" icon="fas fa-edit" color="warning" size="sm" />
-                <x-delete action="{{ route('users.destroy', $user) }}" icon="fas fa-trash" color="danger" size="sm" />
-            </x-table-cell>
-        </x-table-row>
-    @endforeach
+    <x-table-body>
+        @foreach($users as $user)
+            <x-table-row>
+                <x-table-cell>{{ $user->id }}</x-table-cell>
+                <x-table-cell>{{ $user->name }}</x-table-cell>
+                <x-table-cell>{{ $user->email }}</x-table-cell>
+                <x-table-cell align="center">
+                    <x-button-group size="sm">
+                        <x-button type="button" icon="fas fa-eye" color="primary" size="sm" />
+                        <x-button type="button" icon="fas fa-edit" color="warning" size="sm" />
+                        <x-delete action="{{ route('users.destroy', $user) }}" icon="fas fa-trash" color="danger" size="sm" />
+                    </x-button-group>
+                </x-table-cell>
+            </x-table-row>
+        @endforeach
+    </x-table-body>
+    
+    <div class="mt-3">
+        <x-pagination :collection="$users" align="end" with-text />
+    </div>
 </x-table>
 ```
 
@@ -284,6 +361,22 @@ public function boot()
 ### Overriding Views
 
 After publishing the views, you can modify them in your `resources/views/vendor/tweny-bladekit` directory.
+
+## Configuration
+
+You can customize the default styles and component registration in the `config/tweny-bladekit.php` file:
+
+```php
+// Example: Customizing button styles
+'styles' => [
+    'button' => [
+        'base' => 'btn',
+        'primary' => 'btn-custom-primary', // Override primary button class
+        'secondary' => 'btn-secondary',
+        // ...
+    ],
+],
+```
 
 ## Requirements
 
