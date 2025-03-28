@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKitComponents\Forms\Elements;
+namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
 
 
 class Checkbox extends Input
@@ -18,6 +18,6 @@ class Checkbox extends Input
     //  Get the view / contents that represent the component.
     public function render()
     {
-        return view('tweny-ui-kit-views::components.forms.elements.checkbox');
+        return view('tweny-bladekit::components.forms.elements.checkbox');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKitComponents\Forms\Elements;
+namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
 
 class PickDate extends  Input
 {
@@ -13,6 +13,6 @@ class PickDate extends  Input
     //  Get the view / contents that represent the component.
     public function render()
     {
-        return view('tweny-ui-kit-views::components.forms.elements.pick-date');
+        return view('tweny-bladekit::components.forms.elements.pick-date');
     }
 }

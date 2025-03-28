@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKitComponents\Forms\Elements;
+namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
 
 use Illuminate\View\Component;
 
@@ -25,6 +25,6 @@ class Textarea extends Component
     //  Get the view / contents that represent the component.
     public function render()
     {
-        return view('tweny-ui-kit-views::components.forms.elements.textarea');
+        return view('tweny-bladekit::components.forms.elements.textarea');
     }
 }

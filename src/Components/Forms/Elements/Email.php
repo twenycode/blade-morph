@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKitComponents\Forms\Elements;
+namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
 
 class Email  extends Input
 {
@@ -12,6 +12,6 @@ class Email  extends Input
     //  Get the view / contents that represent the component.
     public function render()
     {
-        return view('tweny-ui-kit-views::components.forms.elements.email');
+        return view('tweny-bladekit::components.forms.elements.email');
     }
 }

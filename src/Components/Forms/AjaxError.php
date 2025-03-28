@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKitComponents\Forms;
+namespace TwenyCode\LaravelBladeKit\Components\Forms;
 
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\Component;
@@ -24,7 +24,7 @@ class AjaxError extends Component
     //Get the view / contents that represent the component.
     public function render()
     {
-        return view('tweny-ui-kit-views::components.forms.ajax-error');
+        return view('tweny-bladekit::components.forms.ajax-error');
     }
 
 

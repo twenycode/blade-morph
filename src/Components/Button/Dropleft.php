@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKitComponents\Button;
+namespace TwenyCode\LaravelBladeKit\Components\Button;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -22,6 +22,6 @@ class Dropleft extends Component
     //  Get the view / contents that represent the component.
     public function render(): View
     {
-        return view('tweny-ui-kit-views::components.button.dropleft');
+        return view('tweny-bladekit::components.button.dropleft');
     }
 }

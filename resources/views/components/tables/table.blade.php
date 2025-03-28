@@ -1,31 +1,145 @@
-<div class="table-responsive">
+<div class="{{ $responsiveClass() }}">
+    @if($searchable)
+        <div class="mb-3">
+            <input
+                    type="text"
+                    class="form-control"
+                    id="{{ $id }}_search"
+                    placeholder="Search..."
+                    autocomplete="off"
+            >
+        </div>
+    @endif
 
-    <table {{$attributes->merge(['class'=>'table table-sm'])}} id="{{$id}}" >
-
-        <thead class="text-center">
-            <tr>
-                {!! $thead !!}
-            </tr>
+    <table
+            id="{{ $id }}"
+            {{ $attributes->merge(['class' => $tableClass()]) }}
+            {{ $sortable ? 'data-sortable' : '' }}
+    >
+        <thead class="table-light">
+        <tr>
+            {!! $thead !!}
+        </tr>
         </thead>
 
-        <!-- Table Body -->
         <tbody>
-            {{$slot}}
+        {{ $slot }}
         </tbody>
-
     </table>
 
-
-    <div class="row">
-        <div class="col-md-12">
-            <div class="float-left"></div>
-            <div class="float-right">
-                @if(!is_null($collection))
-                    {{$collection->links()}}
-                @endif
-            </div>
+    @if(!is_null($collection) && $collection->hasPages())
+        <div class="d-flex justify-content-end mt-3">
+            {{ $collection->links() }}
         </div>
-    </div>
-
+    @endif
 </div>
 
+@if($searchable || $sortable)
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const table = document.getElementById('{{ $id }}');
+
+            @if($searchable)
+            const searchInput = document.getElementById('{{ $id }}_search');
+            if (searchInput && table) {
+                searchInput.addEventListener('input', function() {
+                    const searchTerm = this.value.toLowerCase();
+                    const rows = table.querySelectorAll('tbody tr');
+
+                    rows.forEach(row => {
+                        const text = row.textContent.toLowerCase();
+                        row.style.display = text.includes(searchTerm) ? '' : 'none';
+                    });
+                });
+            }
+            @endif
+
+                    @if($sortable)
+            if (table) {
+                const headers = table.querySelectorAll('thead th');
+
+                headers.forEach((header, index) => {
+                    if (!header.classList.contains('no-sort')) {
+                        header.classList.add('sortable');
+                        header.setAttribute('role', 'button');
+                        header.innerHTML += '<span class="sort-icon ms-1"></span>';
+
+                        header.addEventListener('click', function() {
+                            const direction = this.getAttribute('data-sort-direction') === 'asc' ? 'desc' : 'asc';
+
+                            // Reset all headers
+                            headers.forEach(h => {
+                                h.removeAttribute('data-sort-direction');
+                                h.querySelector('.sort-icon')?.classList.remove('asc', 'desc');
+                            });
+
+                            // Set current header
+                            this.setAttribute('data-sort-direction', direction);
+                            this.querySelector('.sort-icon').classList.add(direction);
+
+                            // Sort rows
+                            const rows = Array.from(table.querySelectorAll('tbody tr'));
+
+                            rows.sort((a, b) => {
+                                const aValue = a.cells[index].textContent.trim();
+                                const bValue = b.cells[index].textContent.trim();
+
+                                // Check if numeric
+                                if (!isNaN(aValue) && !isNaN(bValue)) {
+                                    return direction === 'asc'
+                                        ? parseFloat(aValue) - parseFloat(bValue)
+                                        : parseFloat(bValue) - parseFloat(aValue);
+                                }
+
+                                // String comparison
+                                return direction === 'asc'
+                                    ? aValue.localeCompare(bValue)
+                                    : bValue.localeCompare(aValue);
+                            });
+
+                            // Reorder table
+                            const tbody = table.querySelector('tbody');
+                            rows.forEach(row => tbody.appendChild(row));
+                        });
+                    }
+                });
+            }
+            @endif
+        });
+    </script>
+
+    @if($sortable)
+        <style>
+            th.sortable {
+                cursor: pointer;
+                position: relative;
+            }
+
+            .sort-icon {
+                display: inline-block;
+                width: 0;
+                height: 0;
+                margin-left: 0.3em;
+                vertical-align: middle;
+                content: "";
+                border-top: 4px solid;
+                border-right: 4px solid transparent;
+                border-bottom: 0;
+                border-left: 4px solid transparent;
+                opacity: 0.3;
+            }
+
+            .sort-icon.asc {
+                border-bottom: 4px solid;
+                border-top: 0;
+                opacity: 1;
+            }
+
+            .sort-icon.desc {
+                border-top: 4px solid;
+                border-bottom: 0;
+                opacity: 1;
+            }
+        </style>
+    @endif
+@endif

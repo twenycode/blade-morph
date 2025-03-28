@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKitComponents\Div;
+namespace TwenyCode\LaravelBladeKit\Components\Div;
 
 use Illuminate\View\Component;
 use Illuminate\Contracts\View\View;
@@ -26,7 +26,7 @@ class Card extends Component
     //  Get the view / contents that represent the component.
     public function render(): View
     {
-        return view('tweny-ui-kit-views::components.div.card');
+        return view('tweny-bladekit::components.div.card');
     }
 
 }
