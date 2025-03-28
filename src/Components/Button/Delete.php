@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\TwenyUiKit\Components\Button;
+namespace TwenyCode\LaravelBladeKitComponents\Button;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;

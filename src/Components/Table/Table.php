@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\TwenyUiKit\Components\Table;
+namespace TwenyCode\LaravelBladeKitComponents\Table;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;

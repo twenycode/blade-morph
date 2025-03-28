@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\TwenyUiKit\Components\Forms;
+namespace TwenyCode\LaravelBladeKitComponents\Forms;
 
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\Component;

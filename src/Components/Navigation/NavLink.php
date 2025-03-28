@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\TwenyUiKit\Components\Navigation;
+namespace TwenyCode\LaravelBladeKitComponents\Navigation;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;

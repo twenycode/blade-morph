@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\TwenyUiKit\Components\Forms\Elements;
+namespace TwenyCode\LaravelBladeKitComponents\Forms\Elements;
 
 class Email  extends Input
 {

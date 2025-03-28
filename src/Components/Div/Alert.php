@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\TwenyUiKit\Components\Div;
+namespace TwenyCode\LaravelBladeKitComponents\Div;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;

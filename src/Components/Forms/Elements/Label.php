@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\TwenyUiKit\Components\Forms\Elements;
+namespace TwenyCode\LaravelBladeKitComponents\Forms\Elements;
 
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
