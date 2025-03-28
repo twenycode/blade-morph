@@ -19,6 +19,7 @@ return [
         'button' => Components\Button\Button::class,
         'delete' => Components\Button\Delete::class,
         'dropleft' => Components\Button\Dropleft::class,
+        'button-group' => Components\Button\ButtonGroup::class,
 
         // Bootstrap Div Classes
         'card' => Components\Div\Card::class,
@@ -29,6 +30,7 @@ return [
         'accordion-item' => Components\Div\AccordionItem::class,
         'tab' => Components\Div\Tab::class,
         'tab-content' => Components\Div\TabContent::class,
+        'progress' => Components\Div\Progress::class,
 
         // Forms Elements
         'form' => Components\Forms\Form::class,
@@ -43,6 +45,7 @@ return [
         'checkbox' => Components\Forms\Elements\Checkbox::class,
         'radio' => Components\Forms\Elements\Radio::class,
         'select' => Components\Forms\Elements\Select::class,
+        'multi-select' => Components\Forms\Elements\MultiSelect::class,
         'file-upload' => Components\Forms\Elements\FileUpload::class,
         'pick-date' => Components\Forms\Elements\PickDate::class,
         'toggle-switch' => Components\Forms\Elements\ToggleSwitch::class,

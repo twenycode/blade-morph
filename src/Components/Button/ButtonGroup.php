@@ -1,0 +1,44 @@
+<?php
+
+namespace TwenyCode\LaravelBladeKit\Components\Button;
+
+use Illuminate\View\Component;
+
+class ButtonGroup extends Component
+{
+    /**
+     * Create a new component instance.
+     */
+    public function __construct(
+        public string $size = '', // '', 'sm', 'lg'
+        public bool $vertical = false,
+        public bool $toolbar = false,
+    ) {
+    }
+
+    /**
+     * Get the view / contents that represent the component.
+     */
+    public function render()
+    {
+        return view('tweny-bladekit::components.button.button-group');
+    }
+
+    /**
+     * Get the button group class.
+     */
+    public function groupClass(): string
+    {
+        $classes = $this->toolbar ? ['btn-toolbar'] : ['btn-group'];
+
+        if ($this->vertical && !$this->toolbar) {
+            $classes = ['btn-group-vertical'];
+        }
+
+        if ($this->size && !$this->toolbar) {
+            $classes[] = "btn-group-{$this->size}";
+        }
+
+        return implode(' ', $classes);
+    }
+}
