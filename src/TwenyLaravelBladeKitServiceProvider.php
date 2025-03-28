@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\TwenyUiKit;
+namespace TwenyCode\LaravelBladeKit;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
@@ -10,7 +10,7 @@ final class TwenyLaravelBladeKitServiceProvider extends ServiceProvider
     //  Register services.
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/tweny-ui-kit.php', 'tweny-ui-kit-config');
+        $this->mergeConfigFrom(__DIR__ . '/../config/tweny-bladekit.php', 'tweny-ui-kit-config');
     }
 
     //  Bootstrap services.
