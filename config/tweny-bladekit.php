@@ -50,8 +50,6 @@ return [
         'table' => Components\Table\Table::class,
         'table-head' => Components\Table\TableHead::class,
         'table-body' => Components\Table\TableBody::class,
-        'table-row' => Components\Table\TableRow::class,
-        'table-cell' => Components\Table\TableCell::class,
     ],
 
     /*
