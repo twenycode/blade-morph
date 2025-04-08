@@ -32,6 +32,7 @@ return [
         'form-group' => Components\Forms\FormGroup::class,
         'error' => Components\Forms\Error::class,
         'input' => Components\Forms\Elements\Input::class,
+        'label' => Components\Forms\Elements\Label::class,
         'email' => Components\Forms\Elements\Email::class,
         'password' => Components\Forms\Elements\Password::class,
         'textarea' => Components\Forms\Elements\Textarea::class,

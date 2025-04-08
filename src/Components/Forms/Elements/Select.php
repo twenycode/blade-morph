@@ -5,10 +5,25 @@ namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
 use Illuminate\View\Component;
 use Illuminate\Support\Arr;
 
+/**
+ * Select Form Element Component
+ *
+ * Represents a select dropdown with support for option groups and custom option rendering.
+ */
 class Select extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @param string $name The select name attribute
+     * @param array $options Array of options to display
+     * @param mixed $selected The currently selected value(s)
+     * @param string|null $id The select id attribute
+     * @param string|null $placeholder Placeholder text
+     * @param bool $multiple Whether multiple selections are allowed
+     * @param string|null $valueField Field name to use as option value for array/object items
+     * @param string|null $labelField Field name to use as option label for array/object items
+     * @param bool $required Whether the select is required
      */
     public function __construct(
         public string $name,
@@ -22,11 +37,14 @@ class Select extends Component
         public bool $required = false,
     ) {
         $this->id = $id ?? $name;
+        // Set selected state, preserving old input on form submission
         $this->selected = old($name, $selected);
     }
 
     /**
      * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View
      */
     public function render()
     {
@@ -35,6 +53,9 @@ class Select extends Component
 
     /**
      * Determine if the given value is selected.
+     *
+     * @param mixed $value The option value to check
+     * @return bool Whether the value is selected
      */
     public function isSelected($value): bool
     {
@@ -47,6 +68,9 @@ class Select extends Component
 
     /**
      * Get the option value based on the item and configuration.
+     *
+     * @param mixed $item The option item
+     * @return mixed The value to use for the option
      */
     public function getOptionValue($item)
     {
@@ -59,6 +83,9 @@ class Select extends Component
 
     /**
      * Get the option label based on the item and configuration.
+     *
+     * @param mixed $item The option item
+     * @return mixed The label to display for the option
      */
     public function getOptionLabel($item)
     {

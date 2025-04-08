@@ -1,3 +1,4 @@
+{{-- Select element blade template --}}
 <select
         name="{{ $name }}{{ $multiple ? '[]' : '' }}"
         id="{{ $id }}"
