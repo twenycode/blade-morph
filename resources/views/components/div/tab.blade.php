@@ -1,4 +1,7 @@
+{{-- Tab component: Tabbed interface with multiple content panels --}}
+
 @if($vertical)
+    {{-- Vertical tab layout --}}
     <div class="d-flex align-items-start">
         <div class="nav {{ $navClass() }} me-3" id="{{ $id }}-nav" role="tablist" aria-orientation="vertical">
             @if($tabs)
@@ -27,6 +30,7 @@
         </div>
     </div>
 @else
+    {{-- Horizontal tab layout --}}
     <div>
         <ul class="nav {{ $navClass() }} mb-3" id="{{ $id }}-nav" role="tablist">
             @if($tabs)
@@ -50,6 +54,7 @@
                     </li>
                 @endforeach
             @else
+                {{-- Use slot for custom navigation if no tabs array --}}
                 {{ $navSlot ?? '' }}
             @endif
         </ul>

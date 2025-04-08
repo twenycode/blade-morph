@@ -9,6 +9,9 @@ class Card extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @param string|null $cardTitle Optional title for the card header
+     * @param string|null $cardButtons Optional buttons to display in the card body
      */
     public function __construct(
         public ?string $cardTitle = null,

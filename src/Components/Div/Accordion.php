@@ -9,6 +9,11 @@ class Accordion extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @param string|null $id Unique identifier for the accordion
+     * @param array|null $items Optional array of accordion items
+     * @param bool $flush Whether to use the flush style (no outer borders)
+     * @param bool $alwaysOpen Whether multiple items can be open simultaneously
      */
     public function __construct(
         public ?string $id = null,
@@ -16,6 +21,7 @@ class Accordion extends Component
         public bool $flush = false,
         public bool $alwaysOpen = false,
     ) {
+        // Generate a random ID if none provided
         $this->id = $id ?? 'accordion_' . Str::random(8);
     }
 
@@ -28,7 +34,7 @@ class Accordion extends Component
     }
 
     /**
-     * Get the accordion class.
+     * Get the accordion class with flush variant if needed.
      */
     public function accordionClass(): string
     {

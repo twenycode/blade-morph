@@ -9,6 +9,13 @@ class Modal extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @param string $id Unique identifier for the modal
+     * @param string|null $modalTitle Optional title for the modal header
+     * @param string|null $modalFooter Optional footer content
+     * @param string|null $size Size variant (sm, lg, xl)
+     * @param bool $centered Whether to vertically center the modal
+     * @param bool $scrollable Whether the modal body is scrollable
      */
     public function __construct(
         public string $id,
@@ -29,7 +36,7 @@ class Modal extends Component
     }
 
     /**
-     * Get the modal dialog class.
+     * Get the modal dialog class based on component properties.
      */
     public function dialogClass(): string
     {
