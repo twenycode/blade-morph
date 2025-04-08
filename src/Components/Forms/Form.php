@@ -16,7 +16,7 @@ class Form extends Component
         public bool $hasFiles = false,
         public bool $ajax = false,
         public ?string $id = null,
-        public ?string $submitLabel = 'Submit',
+        public ?string $submitLabel = null,
         public ?string $cancelLabel = null,
         public ?string $cancelUrl = null,
         public bool $inline = false,
@@ -50,14 +50,6 @@ class Form extends Component
     public function spoofedMethod(): ?string
     {
         return !in_array($this->method, ['GET', 'POST']) ? $this->method : null;
-    }
-
-    /**
-     * Determine if the current route name matches the given pattern.
-     */
-    public function routeIs(string $pattern): bool
-    {
-        return Route::currentRouteNamed($pattern);
     }
 
     /**

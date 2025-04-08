@@ -1,6 +1,6 @@
 <form
         id="{{ $id }}"
-        method="{{ $formMethod() }}"
+        method="{{ $method  ?? 'POST' }}"
         action="{{ $action }}"
         {!! $hasFiles ? 'enctype="multipart/form-data"' : '' !!}
         {{ $attributes->merge(['class' => $formClass()]) }}

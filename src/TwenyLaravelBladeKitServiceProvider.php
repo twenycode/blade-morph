@@ -5,7 +5,7 @@ namespace TwenyCode\LaravelBladeKit;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
-final class TwenyLaravelBladeKitServiceProvider extends ServiceProvider
+class TwenyLaravelBladeKitServiceProvider extends ServiceProvider
 {
     /**
      * Register services.

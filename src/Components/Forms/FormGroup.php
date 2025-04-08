@@ -68,12 +68,4 @@ class FormGroup extends Component
 
         return null;
     }
-
-    /**
-     * Get appropriate class based on validation state.
-     */
-    public function controlClass(): string
-    {
-        return $this->hasError() ? 'is-invalid' : '';
-    }
 }

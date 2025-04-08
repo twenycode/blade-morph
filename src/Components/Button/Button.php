@@ -11,16 +11,16 @@ class Button extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $type = 'button',
-        public ?string $id = null,
-        public string $label = 'Submit',
-        public ?string $color = 'primary',
-        public ?string $size = null,
-        public bool $outline = false,
-        public bool $loading = false,
-        public ?string $loadingText = null,
-        public ?string $icon = null,
-        public ?string $iconPosition = 'left',
+        public string $type = 'button',       // button, submit, reset
+        public ?string $id = null,            // Optional ID attribute
+        public string $label = 'Submit',      // Button text
+        public ?string $color = 'primary',    // Bootstrap color
+        public ?string $size = null,          // sm, lg, or null for default
+        public bool $outline = false,         // Outlined style
+        public bool $loading = false,         // Loading state
+        public ?string $loadingText = null,   // Text when loading
+        public ?string $icon = null,          // Icon class (FontAwesome)
+        public ?string $iconPosition = 'left', // Icon position
     ) {
         $this->id = $id ?? uniqid('btn_');
     }
