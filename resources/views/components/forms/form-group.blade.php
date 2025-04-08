@@ -40,6 +40,13 @@
                 <div class="invalid-feedback">
                     {{ $errorMessage() }}
                 </div>
+
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        document.getElementById('{{ $id }}').classList.add('is-invalid');
+                    });
+                </script>
+                
             @endif
         </div>
     </div>
@@ -65,6 +72,13 @@
             <div class="invalid-feedback">
                 {{ $errorMessage() }}
             </div>
+
+            <script>
+                document.addEventListener('DOMContentLoaded', function() {
+                    document.getElementById('{{ $id }}').classList.add('is-invalid');
+                });
+            </script>
+
         @endif
     </div>
 @endif
