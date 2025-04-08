@@ -1,4 +1,5 @@
 # Laravel BladeKit Documentation
+A comprehensive set of Laravel Blade components to accelerate your UI development.
 
 This documentation provides comprehensive examples of each component in the Laravel BladeKit package, showing both the Blade usage syntax and the resulting HTML output.
 
