@@ -1,4 +1,6 @@
+{{-- Accordion component: Collapsible content panels --}}
 <div class="{{ $accordionClass() }}" id="{{ $id }}">
+    {{-- Render from items array if provided --}}
     @if($items)
         @foreach($items as $key => $item)
             <div class="accordion-item">
@@ -12,6 +14,7 @@
                             aria-controls="collapse_{{ $id }}_{{ $loop->index }}"
                             {{ $alwaysOpen ? 'data-bs-parent=""' : 'data-bs-parent="#' . $id . '"' }}
                     >
+                        {{-- Handle both simple strings and arrays with title/icon --}}
                         @if(is_array($item) && isset($item['title']))
                             @if(isset($item['icon']))
                                 <i class="{{ $item['icon'] }} me-2"></i>
@@ -29,6 +32,7 @@
                         {{ $alwaysOpen ? '' : 'data-bs-parent="#' . $id . '"' }}
                 >
                     <div class="accordion-body">
+                        {{-- Handle content from array or fallback to item itself --}}
                         @if(is_array($item) && isset($item['content']))
                             {!! $item['content'] !!}
                         @else
@@ -39,6 +43,7 @@
             </div>
         @endforeach
     @else
+        {{-- Use slot content when no items array provided --}}
         {{ $slot }}
     @endif
 </div>

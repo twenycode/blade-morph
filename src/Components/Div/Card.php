@@ -7,26 +7,23 @@ use Illuminate\Contracts\View\View;
 
 class Card extends Component
 {
-
-    /* @var null */
-    public $cardTitle;
-
-    public $cardButtons;
-
-
-    //  Create a new component instance.
-    public function __construct($cardTitle = null, $cardButtons = null)
-    {
-        $this->cardTitle = $cardTitle;
-
-        $this->cardButtons = $cardButtons;
+    /**
+     * Create a new component instance.
+     *
+     * @param string|null $cardTitle Optional title for the card header
+     * @param string|null $cardButtons Optional buttons to display in the card body
+     */
+    public function __construct(
+        public ?string $cardTitle = null,
+        public ?string $cardButtons = null
+    ) {
     }
 
-
-    //  Get the view / contents that represent the component.
+    /**
+     * Get the view / contents that represent the component.
+     */
     public function render(): View
     {
         return view('tweny-bladekit::components.div.card');
     }
-
 }

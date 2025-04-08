@@ -4,10 +4,22 @@ namespace TwenyCode\LaravelBladeKit\Components\Navigation;
 
 use Illuminate\View\Component;
 
+/**
+ * Pagination Navigation Component
+ *
+ * This component renders Bootstrap-compatible pagination for Laravel collections.
+ * It supports different sizes, alignments, and optional status text.
+ */
 class Pagination extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @param mixed $collection Laravel paginator instance
+     * @param string $size Pagination size (sm, lg, or empty for default)
+     * @param bool $withText Whether to show status text below pagination
+     * @param string $align Alignment of pagination (start, center, end, between, around)
+     * @param bool $simple Whether to use simple pagination
      */
     public function __construct(
         public $collection,
@@ -20,6 +32,8 @@ class Pagination extends Component
 
     /**
      * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View
      */
     public function render()
     {
@@ -27,7 +41,9 @@ class Pagination extends Component
     }
 
     /**
-     * Get the pagination size class.
+     * Get the pagination size CSS class.
+     *
+     * @return string CSS class for pagination size
      */
     public function sizeClass(): string
     {
@@ -43,7 +59,9 @@ class Pagination extends Component
     }
 
     /**
-     * Get the alignment class.
+     * Get the alignment CSS class.
+     *
+     * @return string CSS class for pagination alignment
      */
     public function alignmentClass(): string
     {
@@ -60,14 +78,14 @@ class Pagination extends Component
 
     /**
      * Render the pagination links.
+     *
+     * @return string Rendered pagination HTML
      */
     public function links(): string
     {
         if (!$this->collection || !method_exists($this->collection, 'links')) {
             return '';
         }
-
-        $options = [];
 
         if ($this->simple) {
             return $this->collection->simplePaginate()->links('pagination::simple-bootstrap-5');

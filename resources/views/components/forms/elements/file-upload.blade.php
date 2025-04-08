@@ -1,3 +1,4 @@
+{{-- File upload element blade template --}}
 <div class="file-upload-component">
     <div class="input-group">
         <input

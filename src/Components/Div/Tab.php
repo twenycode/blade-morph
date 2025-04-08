@@ -9,6 +9,14 @@ class Tab extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @param string|null $id Unique identifier for the tab group
+     * @param array|null $tabs Optional array of tab definitions
+     * @param string|null $activeTab Key of the initially active tab
+     * @param string $type Visual style (tabs, pills, underline)
+     * @param string $alignment Horizontal alignment (left, center, right, justified)
+     * @param bool $vertical Whether tabs should be vertical
+     * @param bool $fade Whether to use fade transition
      */
     public function __construct(
         public ?string $id = null,
@@ -19,7 +27,10 @@ class Tab extends Component
         public bool $vertical = false,
         public bool $fade = true,
     ) {
+        // Generate random ID if none provided
         $this->id = $id ?? 'tabs_' . Str::random(8);
+
+        // Set the first tab as active if not specified
         $this->activeTab = $activeTab ?? ($tabs && count($tabs) > 0 ? array_key_first($tabs) : null);
     }
 
@@ -32,7 +43,7 @@ class Tab extends Component
     }
 
     /**
-     * Get CSS class for nav tabs.
+     * Get CSS class for nav tabs based on component properties.
      */
     public function navClass(): string
     {
@@ -65,7 +76,7 @@ class Tab extends Component
     }
 
     /**
-     * Generate a tab ID.
+     * Generate a consistent tab ID from the tab key.
      */
     public function getTabId(string $key): string
     {
@@ -73,7 +84,7 @@ class Tab extends Component
     }
 
     /**
-     * Check if a tab is active.
+     * Check if a tab is the active one.
      */
     public function isActive(string $key): bool
     {

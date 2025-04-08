@@ -1,6 +1,28 @@
+{{--
+    Form Component
+    Creates a form with optional AJAX support, file uploads, and standardized buttons
+
+    Parameters:
+    - $action: Form submission URL
+    - $method: HTTP method (GET, POST, PUT, PATCH, DELETE)
+    - $hasFiles: Enable file uploads (adds enctype attribute)
+    - $ajax: Enable AJAX form submission
+    - $id: Custom form ID
+    - $submitLabel: Label for submit button (null to hide)
+    - $cancelLabel: Label for cancel button (null to hide)
+    - $cancelUrl: URL for cancel button
+    - $inline: Use inline form layout
+    - $novalidate: Disable browser validation
+
+    Usage:
+    <x-forms.form action="{{ route('users.store') }}" method="POST" submit-label="Save User">
+        <!-- Form fields go here -->
+    </x-forms.form>
+--}}
+
 <form
         id="{{ $id }}"
-        method="{{ $formMethod() }}"
+        method="{{ $method ?? 'POST' }}"
         action="{{ $action }}"
         {!! $hasFiles ? 'enctype="multipart/form-data"' : '' !!}
         {{ $attributes->merge(['class' => $formClass()]) }}
@@ -9,16 +31,20 @@
         {!! $novalidate ? 'novalidate' : '' !!}
         {!! $ajax ? 'data-ajax-form' : '' !!}
 >
+    {{-- CSRF Token --}}
     @csrf
 
+    {{-- Method Spoofing for PUT/PATCH/DELETE --}}
     @if($spoofedMethod())
         @method($spoofedMethod())
     @endif
 
+    {{-- Form Content --}}
     <div class="form-content">
         {{ $slot }}
     </div>
 
+    {{-- Form Actions (Submit/Cancel buttons) --}}
     @if($submitLabel || $cancelLabel)
         <div class="form-actions mt-4">
             @if($submitLabel)
@@ -39,6 +65,7 @@
         </div>
     @endif
 
+    {{-- AJAX Message Container (hidden by default) --}}
     @if($ajax)
         <div class="ajax-form-message mt-3" style="display: none;">
             <div class="alert alert-success ajax-success-message" role="alert"></div>
@@ -47,6 +74,7 @@
     @endif
 </form>
 
+{{-- AJAX Form Handling Script --}}
 @if($ajax)
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -94,9 +122,11 @@
                             formMessage.style.display = 'block';
 
                             if (data.success) {
+                                // Success response handling
                                 successMessage.textContent = data.message || 'Form submitted successfully!';
                                 successMessage.style.display = 'block';
 
+                                // Handle redirect if provided
                                 if (data.redirect) {
                                     setTimeout(() => {
                                         window.location.href = data.redirect;
@@ -136,6 +166,7 @@
                             }
                         })
                         .catch(error => {
+                            // Handle unexpected errors
                             formMessage.style.display = 'block';
                             errorMessage.textContent = 'An unexpected error occurred. Please try again.';
                             errorMessage.style.display = 'block';

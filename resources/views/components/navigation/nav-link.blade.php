@@ -1,14 +1,23 @@
+{{--
+  NavLink Navigation View
+
+  This template renders a Bootstrap-compatible navigation link with optional
+  icon and badge elements.
+--}}
 <a
         href="{{ $href }}"
         {{ $attributes->merge(['class' => 'nav-link ' . $getActiveClass()]) }}
 >
-    @if($icon)
-        <i class="{{ $icon }} me-1"></i>
-    @endif
+        {{-- Optional icon --}}
+        @if($icon)
+                <i class="{{ $icon }} me-1"></i>
+        @endif
 
-    {!! $label !!}
+        {{-- Link label (unescaped to allow HTML) --}}
+        {!! $label !!}
 
-    @if($badge)
-        <span class="badge bg-{{ $badgeColor }} ms-1">{{ $badge }}</span>
-    @endif
+        {{-- Optional badge --}}
+        @if($badge)
+                <span class="badge bg-{{ $badgeColor }} ms-1">{{ $badge }}</span>
+        @endif
 </a>

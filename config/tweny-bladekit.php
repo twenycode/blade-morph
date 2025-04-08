@@ -18,43 +18,32 @@ return [
         // Buttons
         'button' => Components\Button\Button::class,
         'delete' => Components\Button\Delete::class,
-        'dropleft' => Components\Button\Dropleft::class,
         'button-group' => Components\Button\ButtonGroup::class,
 
-        // Bootstrap Div Classes
+        // Layout Components
         'card' => Components\Div\Card::class,
         'alert' => Components\Div\Alert::class,
         'modal' => Components\Div\Modal::class,
-        'toast' => Components\Div\Toast::class,
         'accordion' => Components\Div\Accordion::class,
-        'accordion-item' => Components\Div\AccordionItem::class,
         'tab' => Components\Div\Tab::class,
-        'tab-content' => Components\Div\TabContent::class,
-        'progress' => Components\Div\Progress::class,
 
         // Forms Elements
         'form' => Components\Forms\Form::class,
         'form-group' => Components\Forms\FormGroup::class,
         'error' => Components\Forms\Error::class,
-        'ajax-error' => Components\Forms\AjaxError::class,
-        'label' => Components\Forms\Elements\Label::class,
         'input' => Components\Forms\Elements\Input::class,
-        'password' => Components\Forms\Elements\Password::class,
+        'label' => Components\Forms\Elements\Label::class,
         'email' => Components\Forms\Elements\Email::class,
+        'password' => Components\Forms\Elements\Password::class,
         'textarea' => Components\Forms\Elements\Textarea::class,
         'checkbox' => Components\Forms\Elements\Checkbox::class,
         'radio' => Components\Forms\Elements\Radio::class,
         'select' => Components\Forms\Elements\Select::class,
-        'multi-select' => Components\Forms\Elements\MultiSelect::class,
         'file-upload' => Components\Forms\Elements\FileUpload::class,
-        'pick-date' => Components\Forms\Elements\PickDate::class,
-        'toggle-switch' => Components\Forms\Elements\ToggleSwitch::class,
 
         // Navigation
         'nav-link' => Components\Navigation\NavLink::class,
-        'nav-modal' => Components\Navigation\NavModal::class,
         'dropdown' => Components\Navigation\Dropdown::class,
-        'dropdown-item' => Components\Navigation\DropdownItem::class,
         'breadcrumb' => Components\Navigation\Breadcrumb::class,
         'pagination' => Components\Navigation\Pagination::class,
 
@@ -62,8 +51,6 @@ return [
         'table' => Components\Table\Table::class,
         'table-head' => Components\Table\TableHead::class,
         'table-body' => Components\Table\TableBody::class,
-        'table-row' => Components\Table\TableRow::class,
-        'table-cell' => Components\Table\TableCell::class,
     ],
 
     /*
@@ -97,9 +84,6 @@ return [
             'check-input' => 'form-check-input',
             'check-label' => 'form-check-label',
             'select' => 'form-select',
-            'file' => 'form-control',
-            'range' => 'form-range',
-            'plaintext' => 'form-control-plaintext',
             'feedback-invalid' => 'invalid-feedback',
             'feedback-valid' => 'valid-feedback',
             'is-invalid' => 'is-invalid',

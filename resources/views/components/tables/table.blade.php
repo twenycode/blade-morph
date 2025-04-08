@@ -1,4 +1,12 @@
+{{--
+  Main Table Component View
+
+  This view renders a complete table with search functionality,
+  sorting capabilities, and pagination support.
+--}}
+
 <div class="{{ $responsiveClass() }}">
+    {{-- Search input field (if enabled) --}}
     @if($searchable)
         <div class="mb-3">
             <input
@@ -11,6 +19,7 @@
         </div>
     @endif
 
+    {{-- Main table element --}}
     <table
             id="{{ $id }}"
             {{ $attributes->merge(['class' => $tableClass()]) }}
@@ -27,6 +36,7 @@
         </tbody>
     </table>
 
+    {{-- Pagination links (if collection is paginated) --}}
     @if(!is_null($collection) && $collection->hasPages())
         <div class="d-flex justify-content-end mt-3">
             {{ $collection->links() }}
@@ -34,11 +44,13 @@
     @endif
 </div>
 
+{{-- JavaScript for search and sorting functionality --}}
 @if($searchable || $sortable)
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const table = document.getElementById('{{ $id }}');
 
+            {{-- Search functionality --}}
             @if($searchable)
             const searchInput = document.getElementById('{{ $id }}_search');
             if (searchInput && table) {
@@ -54,6 +66,7 @@
             }
             @endif
 
+                    {{-- Sorting functionality --}}
                     @if($sortable)
             if (table) {
                 const headers = table.querySelectorAll('thead th');
@@ -108,6 +121,7 @@
         });
     </script>
 
+    {{-- CSS for sort indicators --}}
     @if($sortable)
         <style>
             th.sortable {

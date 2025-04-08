@@ -10,9 +10,9 @@ class ButtonGroup extends Component
      * Create a new component instance.
      */
     public function __construct(
-        public string $size = '', // '', 'sm', 'lg'
-        public bool $vertical = false,
-        public bool $toolbar = false,
+        public string $size = '',    // '', 'sm', 'lg'
+        public bool $vertical = false, // Vertical stack instead of horizontal
+        public bool $toolbar = false,  // Button toolbar (container for button groups)
     ) {
     }
 

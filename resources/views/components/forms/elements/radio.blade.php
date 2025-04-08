@@ -1,3 +1,4 @@
+{{-- Radio input element blade template --}}
 <div class="{{ $formCheckClass() }}">
     <input
             type="radio"
