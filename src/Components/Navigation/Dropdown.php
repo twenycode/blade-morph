@@ -5,10 +5,25 @@ namespace TwenyCode\LaravelBladeKit\Components\Navigation;
 use Illuminate\View\Component;
 use Illuminate\Support\Str;
 
+/**
+ * Dropdown Navigation Component
+ *
+ * This component renders a Bootstrap-compatible dropdown menu.
+ * It supports regular and split button dropdowns with various customization options.
+ */
 class Dropdown extends Component
 {
     /**
      * Create a new component instance.
+     *
+     * @param string|null $id Unique ID for the dropdown (auto-generated if null)
+     * @param string $label Text label for the dropdown button
+     * @param string|null $icon Optional icon class for the button
+     * @param string $alignment Dropdown direction (dropdown, dropup, dropend, dropstart)
+     * @param string|null $color Bootstrap button color variant
+     * @param string|null $size Button size (sm, lg)
+     * @param bool $split Whether to use a split button dropdown
+     * @param bool $dark Whether to use dark theme for dropdown menu
      */
     public function __construct(
         public ?string $id = null,
@@ -20,11 +35,14 @@ class Dropdown extends Component
         public bool $split = false,
         public bool $dark = false,
     ) {
+        // Generate a random ID if none provided
         $this->id = $id ?? 'dropdown_' . Str::random(8);
     }
 
     /**
      * Get the view / contents that represent the component.
+     *
+     * @return \Illuminate\Contracts\View\View
      */
     public function render()
     {
@@ -32,7 +50,9 @@ class Dropdown extends Component
     }
 
     /**
-     * Get the dropdown class.
+     * Get the dropdown CSS class based on alignment.
+     *
+     * @return string CSS class for dropdown container
      */
     public function dropdownClass(): string
     {
@@ -44,7 +64,9 @@ class Dropdown extends Component
     }
 
     /**
-     * Get the button class based on color and size.
+     * Get the button CSS classes based on color and size.
+     *
+     * @return string CSS classes for the dropdown button
      */
     public function buttonClass(): string
     {
@@ -62,7 +84,9 @@ class Dropdown extends Component
     }
 
     /**
-     * Get the menu class.
+     * Get the dropdown menu CSS classes.
+     *
+     * @return string CSS classes for the dropdown menu
      */
     public function menuClass(): string
     {
