@@ -46,7 +46,7 @@
                         document.getElementById('{{ $id }}').classList.add('is-invalid');
                     });
                 </script>
-                
+
             @endif
         </div>
     </div>

@@ -6,7 +6,7 @@
 --}}
 <a
         href="{{ $href }}"
-        {{ $attributes->merge(['class' => 'nav-link ' . $getActiveClass()]) }}
+        {{ $attributes->merge(['class' => 'btn ' . $getActiveClass()]) }}
 >
         {{-- Optional icon --}}
         @if($icon)
