@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
+namespace TwenyCode\BladeMorph\Components\Forms\Elements;
 
 /**
  * Email Form Element Component
@@ -29,6 +29,6 @@ class Email extends Input
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.elements.email');
+        return view('blademorph::components.forms.elements.email');
     }
 }

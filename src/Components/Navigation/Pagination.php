@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Navigation;
+namespace TwenyCode\BladeMorph\Components\Navigation;
 
 use Illuminate\View\Component;
 
@@ -37,7 +37,7 @@ class Pagination extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.navigation.pagination');
+        return view('blademorph::components.navigation.pagination');
     }
 
     /**

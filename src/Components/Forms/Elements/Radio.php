@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
+namespace TwenyCode\BladeMorph\Components\Forms\Elements;
 
 use Illuminate\View\Component;
 
@@ -45,7 +45,7 @@ class Radio extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.elements.radio');
+        return view('blademorph::components.forms.elements.radio');
     }
 
     /**

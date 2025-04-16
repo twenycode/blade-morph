@@ -1,18 +1,18 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit;
+namespace TwenyCode\BladeMorph;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\View\Compilers\BladeCompiler;
 
-class TwenyLaravelBladeKitServiceProvider extends ServiceProvider
+class BladeMorphServiceProvider extends ServiceProvider
 {
     /**
      * Register services.
      */
     public function register(): void
     {
-        $this->mergeConfigFrom(__DIR__ . '/../config/tweny-bladekit.php', 'tweny-bladekit');
+        $this->mergeConfigFrom(__DIR__ . '/../config/blademorph.php', 'blademorph');
     }
 
     /**
@@ -32,13 +32,13 @@ class TwenyLaravelBladeKitServiceProvider extends ServiceProvider
     {
         // Publish config
         $this->publishes([
-            __DIR__ . '/../config/tweny-bladekit.php' => config_path('tweny-bladekit.php'),
-        ], 'tweny-bladekit-config');
+            __DIR__ . '/../config/blademorph.php' => config_path('blademorph.php'),
+        ], 'blademorph-config');
 
         // Publish views
         $this->publishes([
-            __DIR__ . '/../resources/views' => resource_path('views/vendor/tweny-bladekit'),
-        ], 'tweny-bladekit-views');
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/blademorph'),
+        ], 'blademorph-views');
     }
 
     /**
@@ -46,7 +46,7 @@ class TwenyLaravelBladeKitServiceProvider extends ServiceProvider
      */
     private function bootResourcesViews(): void
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'tweny-bladekit');
+        $this->loadViewsFrom(__DIR__.'/../resources/views', 'blademorph');
     }
 
     /**
@@ -55,7 +55,7 @@ class TwenyLaravelBladeKitServiceProvider extends ServiceProvider
     private function bootBladeComponents(): void
     {
         $this->callAfterResolving(BladeCompiler::class, function (BladeCompiler $blade) {
-            foreach (config('tweny-bladekit.components', []) as $alias => $component) {
+            foreach (config('blademorph.components', []) as $alias => $component) {
                 $blade->component($component, $alias);
             }
         });

@@ -1,5 +1,5 @@
 {
-    "name": "twenycode/laravel-bladekit",
+    "name": "twenycode/blade-morph",
     "description": "A comprehensive set of Laravel Blade components to accelerate your UI development",
     "type": "library",
     "license": "MIT",
@@ -16,13 +16,13 @@
     },
     "autoload": {
         "psr-4": {
-            "TwenyCode\\LaravelBladeKit\\": "src/"
+            "TwenyCode\\BladeMorph\\": "src/"
         }
     },
     "extra": {
         "laravel": {
             "providers": [
-                "TwenyCode\\LaravelBladeKit\\TwenyLaravelBladeKitServiceProvider"
+                "TwenyCode\\BladeMorph\\BladeMorphServiceProvider"
             ]
         }
     }

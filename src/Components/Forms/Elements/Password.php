@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
+namespace TwenyCode\BladeMorph\Components\Forms\Elements;
 
 /**
  * Password Form Element Component
@@ -29,6 +29,6 @@ class Password extends Input
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.elements.password');
+        return view('blademorph::components.forms.elements.password');
     }
 }

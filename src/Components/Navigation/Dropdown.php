@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Navigation;
+namespace TwenyCode\BladeMorph\Components\Navigation;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Str;
@@ -46,7 +46,7 @@ class Dropdown extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.navigation.dropdown');
+        return view('blademorph::components.navigation.dropdown');
     }
 
     /**

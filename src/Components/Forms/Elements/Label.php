@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
+namespace TwenyCode\BladeMorph\Components\Forms\Elements;
 
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
@@ -37,7 +37,7 @@ class Label extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.elements.label');
+        return view('blademorph::components.forms.elements.label');
     }
 
     /**

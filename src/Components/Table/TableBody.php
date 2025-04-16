@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Table;
+namespace TwenyCode\BladeMorph\Components\Table;
 
 use Illuminate\View\Component;
 
@@ -27,6 +27,6 @@ class TableBody extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.tables.table-body');
+        return view('blademorph::components.tables.table-body');
     }
 }

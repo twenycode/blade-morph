@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Div;
+namespace TwenyCode\BladeMorph\Components\Div;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Str;
@@ -39,7 +39,7 @@ class Tab extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.div.tab');
+        return view('blademorph::components.div.tab');
     }
 
     /**

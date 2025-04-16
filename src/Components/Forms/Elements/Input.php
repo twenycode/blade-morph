@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
+namespace TwenyCode\BladeMorph\Components\Forms\Elements;
 
 use Illuminate\View\Component;
 
@@ -46,6 +46,6 @@ class Input extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.elements.input');
+        return view('blademorph::components.forms.elements.input');
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Button;
+namespace TwenyCode\BladeMorph\Components\Button;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -30,7 +30,7 @@ class Button extends Component
      */
     public function render(): View
     {
-        return view('tweny-bladekit::components.button.button');
+        return view('blademorph::components.button.button');
     }
 
     /**

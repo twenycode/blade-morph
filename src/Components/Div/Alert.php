@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Div;
+namespace TwenyCode\BladeMorph\Components\Div;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -26,7 +26,7 @@ class Alert extends Component
      */
     public function render(): View
     {
-        return view('tweny-bladekit::components.div.alert');
+        return view('blademorph::components.div.alert');
     }
 
     /**

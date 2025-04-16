@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
+namespace TwenyCode\BladeMorph\Components\Forms\Elements;
 
 /**
  * Checkbox Form Element Component
@@ -36,6 +36,6 @@ class Checkbox extends Input
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.elements.checkbox');
+        return view('blademorph::components.forms.elements.checkbox');
     }
 }

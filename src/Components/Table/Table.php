@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Table;
+namespace TwenyCode\BladeMorph\Components\Table;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -51,7 +51,7 @@ class Table extends Component
      */
     public function render(): View
     {
-        return view('tweny-bladekit::components.tables.table');
+        return view('blademorph::components.tables.table');
     }
 
     /**

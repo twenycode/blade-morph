@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Button;
+namespace TwenyCode\BladeMorph\Components\Button;
 
 use Illuminate\View\Component;
 
@@ -21,7 +21,7 @@ class ButtonGroup extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.button.button-group');
+        return view('blademorph::components.button.button-group');
     }
 
     /**
