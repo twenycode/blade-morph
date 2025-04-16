@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms;
+namespace TwenyCode\BladeMorph\Components\Forms;
 
 use Illuminate\Support\ViewErrorBag;
 use Illuminate\View\Component;
@@ -54,7 +54,7 @@ class Error extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.error');
+        return view('blademorph::components.forms.error');
     }
 
     /**

@@ -1,6 +1,6 @@
 <?php
 
-use TwenyCode\LaravelBladeKit\Components;
+use TwenyCode\BladeMorph\Components;
 
 return [
     /*
@@ -9,7 +9,7 @@ return [
     |--------------------------------------------------------------------------
     |
     | Below you reference all components that should be loaded for your app.
-    | By default all components from Tweny UI Kit are loaded in. You can
+    | By default all components from BladeMorph are loaded in. You can
     | disable or overwrite any component class or alias that you want.
     |
     */

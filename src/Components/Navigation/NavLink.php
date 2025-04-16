@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Navigation;
+namespace TwenyCode\BladeMorph\Components\Navigation;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -42,7 +42,7 @@ class NavLink extends Component
      */
     public function render(): View
     {
-        return view('tweny-bladekit::components.navigation.nav-link');
+        return view('blademorph::components.navigation.nav-link');
     }
 
     /**

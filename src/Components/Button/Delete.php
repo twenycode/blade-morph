@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Button;
+namespace TwenyCode\BladeMorph\Components\Button;
 
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
@@ -22,6 +22,6 @@ class Delete extends Component
      */
     public function render(): View
     {
-        return view('tweny-bladekit::components.button.delete');
+        return view('blademorph::components.button.delete');
     }
 }

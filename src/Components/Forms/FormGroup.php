@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms;
+namespace TwenyCode\BladeMorph\Components\Forms;
 
 use Illuminate\View\Component;
 use Illuminate\Support\ViewErrorBag;
@@ -48,7 +48,7 @@ class FormGroup extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.form-group');
+        return view('blademorph::components.forms.form-group');
     }
 
     /**

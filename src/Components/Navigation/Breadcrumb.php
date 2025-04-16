@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Navigation;
+namespace TwenyCode\BladeMorph\Components\Navigation;
 
 use Illuminate\View\Component;
 
@@ -33,7 +33,7 @@ class Breadcrumb extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.navigation.breadcrumb');
+        return view('blademorph::components.navigation.breadcrumb');
     }
 
     /**

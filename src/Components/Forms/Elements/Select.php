@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
+namespace TwenyCode\BladeMorph\Components\Forms\Elements;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Arr;
@@ -48,7 +48,7 @@ class Select extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.elements.select');
+        return view('blademorph::components.forms.elements.select');
     }
 
     /**

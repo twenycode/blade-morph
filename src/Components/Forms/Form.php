@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms;
+namespace TwenyCode\BladeMorph\Components\Forms;
 
 use Illuminate\View\Component;
 use Illuminate\Support\Facades\Route;
@@ -51,7 +51,7 @@ class Form extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.form');
+        return view('blademorph::components.forms.form');
     }
 
     /**

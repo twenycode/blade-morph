@@ -1,6 +1,6 @@
 <?php
 
-namespace TwenyCode\LaravelBladeKit\Components\Forms\Elements;
+namespace TwenyCode\BladeMorph\Components\Forms\Elements;
 
 use Illuminate\View\Component;
 
@@ -56,7 +56,7 @@ class FileUpload extends Component
      */
     public function render()
     {
-        return view('tweny-bladekit::components.forms.elements.file-upload');
+        return view('blademorph::components.forms.elements.file-upload');
     }
 
     /**
