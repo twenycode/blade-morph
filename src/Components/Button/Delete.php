@@ -22,6 +22,6 @@ class Delete extends Component
      */
     public function render(): View
     {
-        return view('blademorph::components.button.delete');
+        return view('blade-morph::components.button.delete');
     }
 }

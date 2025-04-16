@@ -21,7 +21,7 @@ class ButtonGroup extends Component
      */
     public function render()
     {
-        return view('blademorph::components.button.button-group');
+        return view('blade-morph::components.button.button-group');
     }
 
     /**

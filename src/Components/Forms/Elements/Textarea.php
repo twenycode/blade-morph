@@ -41,6 +41,6 @@ class Textarea extends Component
      */
     public function render()
     {
-        return view('blademorph::components.forms.elements.textarea');
+        return view('blade-morph::components.forms.elements.textarea');
     }
 }

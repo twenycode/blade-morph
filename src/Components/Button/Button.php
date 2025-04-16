@@ -30,7 +30,7 @@ class Button extends Component
      */
     public function render(): View
     {
-        return view('blademorph::components.button.button');
+        return view('blade-morph::components.button.button');
     }
 
     /**

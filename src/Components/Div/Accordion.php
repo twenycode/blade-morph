@@ -30,7 +30,7 @@ class Accordion extends Component
      */
     public function render()
     {
-        return view('blademorph::components.div.accordion');
+        return view('blade-morph::components.div.accordion');
     }
 
     /**

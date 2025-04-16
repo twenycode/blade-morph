@@ -37,7 +37,7 @@ class Pagination extends Component
      */
     public function render()
     {
-        return view('blademorph::components.navigation.pagination');
+        return view('blade-morph::components.navigation.pagination');
     }
 
     /**

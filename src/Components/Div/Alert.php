@@ -26,7 +26,7 @@ class Alert extends Component
      */
     public function render(): View
     {
-        return view('blademorph::components.div.alert');
+        return view('blade-morph::components.div.alert');
     }
 
     /**

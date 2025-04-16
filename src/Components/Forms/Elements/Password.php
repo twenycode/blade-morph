@@ -29,6 +29,6 @@ class Password extends Input
      */
     public function render()
     {
-        return view('blademorph::components.forms.elements.password');
+        return view('blade-morph::components.forms.elements.password');
     }
 }

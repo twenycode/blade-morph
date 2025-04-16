@@ -54,7 +54,7 @@ class Error extends Component
      */
     public function render()
     {
-        return view('blademorph::components.forms.error');
+        return view('blade-morph::components.forms.error');
     }
 
     /**

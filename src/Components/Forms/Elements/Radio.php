@@ -45,7 +45,7 @@ class Radio extends Component
      */
     public function render()
     {
-        return view('blademorph::components.forms.elements.radio');
+        return view('blade-morph::components.forms.elements.radio');
     }
 
     /**

@@ -32,7 +32,7 @@ class Modal extends Component
      */
     public function render(): View
     {
-        return view('blademorph::components.div.modal');
+        return view('blade-morph::components.div.modal');
     }
 
     /**

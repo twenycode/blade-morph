@@ -46,7 +46,7 @@ class Dropdown extends Component
      */
     public function render()
     {
-        return view('blademorph::components.navigation.dropdown');
+        return view('blade-morph::components.navigation.dropdown');
     }
 
     /**
