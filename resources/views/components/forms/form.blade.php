@@ -22,7 +22,7 @@
 
 <form
         id="{{ $id }}"
-        method="{{ $method ?? 'POST' }}"
+        method="{{ $method !== 'GET' ? 'POST' : 'GET'  }}"
         action="{{ $action }}"
         {!! $hasFiles ? 'enctype="multipart/form-data"' : '' !!}
         {{ $attributes->merge(['class' => $formClass()]) }}
@@ -33,6 +33,7 @@
 >
     {{-- CSRF Token --}}
     @csrf
+    @method($method)
 
     {{-- Method Spoofing for PUT/PATCH/DELETE --}}
     @if($spoofedMethod())
