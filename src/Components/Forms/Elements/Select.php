@@ -48,7 +48,7 @@ class Select extends Component
      */
     public function render()
     {
-        return view('blademorph::components.forms.elements.select');
+        return view('blade-morph::components.forms.elements.select');
     }
 
     /**

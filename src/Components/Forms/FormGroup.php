@@ -48,7 +48,7 @@ class FormGroup extends Component
      */
     public function render()
     {
-        return view('blademorph::components.forms.form-group');
+        return view('blade-morph::components.forms.form-group');
     }
 
     /**

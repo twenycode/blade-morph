@@ -51,7 +51,7 @@ class Table extends Component
      */
     public function render(): View
     {
-        return view('blademorph::components.tables.table');
+        return view('blade-morph::components.tables.table');
     }
 
     /**

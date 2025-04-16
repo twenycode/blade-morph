@@ -39,7 +39,7 @@ class Tab extends Component
      */
     public function render()
     {
-        return view('blademorph::components.div.tab');
+        return view('blade-morph::components.div.tab');
     }
 
     /**

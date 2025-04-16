@@ -56,7 +56,7 @@ class FileUpload extends Component
      */
     public function render()
     {
-        return view('blademorph::components.forms.elements.file-upload');
+        return view('blade-morph::components.forms.elements.file-upload');
     }
 
     /**

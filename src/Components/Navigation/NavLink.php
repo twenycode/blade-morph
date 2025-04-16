@@ -42,7 +42,7 @@ class NavLink extends Component
      */
     public function render(): View
     {
-        return view('blademorph::components.navigation.nav-link');
+        return view('blade-morph::components.navigation.nav-link');
     }
 
     /**

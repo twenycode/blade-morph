@@ -33,7 +33,7 @@ class Breadcrumb extends Component
      */
     public function render()
     {
-        return view('blademorph::components.navigation.breadcrumb');
+        return view('blade-morph::components.navigation.breadcrumb');
     }
 
     /**

@@ -32,7 +32,7 @@ class TableHead extends Component
      */
     public function render()
     {
-        return view('blademorph::components.tables.table-head');
+        return view('blade-morph::components.tables.table-head');
     }
 
     /**

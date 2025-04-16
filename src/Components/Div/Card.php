@@ -24,6 +24,6 @@ class Card extends Component
      */
     public function render(): View
     {
-        return view('blademorph::components.div.card');
+        return view('blade-morph::components.div.card');
     }
 }

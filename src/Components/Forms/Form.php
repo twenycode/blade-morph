@@ -51,7 +51,7 @@ class Form extends Component
      */
     public function render()
     {
-        return view('blademorph::components.forms.form');
+        return view('blade-morph::components.forms.form');
     }
 
     /**

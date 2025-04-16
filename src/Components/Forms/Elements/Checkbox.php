@@ -36,6 +36,6 @@ class Checkbox extends Input
      */
     public function render()
     {
-        return view('blademorph::components.forms.elements.checkbox');
+        return view('blade-morph::components.forms.elements.checkbox');
     }
 }

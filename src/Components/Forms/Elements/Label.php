@@ -37,7 +37,7 @@ class Label extends Component
      */
     public function render()
     {
-        return view('blademorph::components.forms.elements.label');
+        return view('blade-morph::components.forms.elements.label');
     }
 
     /**

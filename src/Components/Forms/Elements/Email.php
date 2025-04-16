@@ -29,6 +29,6 @@ class Email extends Input
      */
     public function render()
     {
-        return view('blademorph::components.forms.elements.email');
+        return view('blade-morph::components.forms.elements.email');
     }
 }

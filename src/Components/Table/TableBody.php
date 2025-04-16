@@ -27,6 +27,6 @@ class TableBody extends Component
      */
     public function render()
     {
-        return view('blademorph::components.tables.table-body');
+        return view('blade-morph::components.tables.table-body');
     }
 }
