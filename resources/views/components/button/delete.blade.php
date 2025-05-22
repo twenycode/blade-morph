@@ -2,6 +2,6 @@
     @csrf
     @method('DELETE')
     <button {{$attributes->merge(['class'=>'btn'])}}  onclick="return confirm('{{$confirmMessage}}')" >
-        {!! $label !!}
+        {!! $icon.' '.$label !!}
     </button>
 </form>

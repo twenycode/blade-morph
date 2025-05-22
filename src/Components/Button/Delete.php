@@ -12,7 +12,8 @@ class Delete extends Component
      */
     public function __construct(
         public string $action,
-        public string $label = '<i class="fa fa-trash-alt"></i> Delete',
+        public string $label = 'Delete',
+        public string $icon = '<i class="fa fa-trash-alt"></i>',
         public string $confirmMessage = 'Do you want to delete this item?'
     ) {
     }
