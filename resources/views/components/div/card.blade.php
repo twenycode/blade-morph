@@ -11,7 +11,7 @@
                         </div>
                     @endif
                 </div>
-                <div class="col-md-6 text-end">
+                <div class="col-md-6 text-end pe-0">
                     @if(!is_null($cardButtons))
                         {!! $cardButtons !!}
                     @endif
