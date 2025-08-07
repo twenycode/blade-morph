@@ -1,7 +1,7 @@
 {{-- Card component: A flexible container with optional header and buttons --}}
 <div {{ $attributes->merge(['class' => 'card']) }} >
     {{-- Card header with title (only renders if title is provided) --}}
-    @if(!is_null($cardTitle))
+    @if(!is_null($cardTitle) || !is_null($cardButtons) )
         <div class="card-header">
             <div class="d-flex justify-content-between">
                 <div class="card-title">
