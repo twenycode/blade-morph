@@ -4,7 +4,7 @@
     @if(!is_null($cardTitle) || !is_null($cardButtons) )
         <div class="card-header pb-3">
             <div class="row">
-                <div class="col-md-6 text-start">
+                <div class="col-md-6 text-start ps-0">
                     @if(!is_null($cardTitle))
                         <div class="card-title">
                             {!! $cardTitle !!}
