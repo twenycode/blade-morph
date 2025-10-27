@@ -5,7 +5,7 @@
   sorting capabilities, and pagination support.
 --}}
 
-<div class="{{ $responsiveClass() }}">
+<div class="table-container {{ $responsiveClass() }}">
     {{-- Search input field (if enabled) --}}
     @if($searchable)
         <div class="mb-3">

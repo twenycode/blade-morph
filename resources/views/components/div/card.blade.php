@@ -2,20 +2,28 @@
 <div {{ $attributes->merge(['class' => 'card']) }} >
     {{-- Card header with title and buttons (only renders if title is provided) --}}
     @if(!is_null($cardTitle) || !is_null($cardButtons) )
-        <div class="card-header pb-3">
+        <div class="card-header">
             <div class="row">
-                <div class="col-md-6 text-start">
+                @if(is_null($cardButtons))
                     @if(!is_null($cardTitle))
                         <div class="card-title">
                             {!! $cardTitle !!}
                         </div>
                     @endif
-                </div>
-                <div class="col-md-6 text-end">
-                    @if(!is_null($cardButtons))
-                        {!! $cardButtons !!}
-                    @endif
-                </div>
+                @else
+                    <div class="col-md-6 col-sm-12 text-start">
+                        @if(!is_null($cardTitle))
+                            <div class="card-title">
+                                {!! $cardTitle !!}
+                            </div>
+                        @endif
+                    </div>
+                    <div class="col-md-6 col-sm-12 text-end">
+                        @if(!is_null($cardButtons))
+                            {!! $cardButtons !!}
+                        @endif
+                    </div>
+                @endif
             </div>
         </div>
     @endif
@@ -23,5 +31,6 @@
     <div class="card-body">
         {{-- Main card content --}}
         {{ $slot }}
+
     </div>
 </div>
