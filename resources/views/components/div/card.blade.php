@@ -21,5 +21,6 @@
 
         {{-- Main card content --}}
         {{ $slot }}
+
     </div>
 </div>
